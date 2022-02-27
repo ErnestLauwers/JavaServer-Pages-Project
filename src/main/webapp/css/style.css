@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Yu Gothic", sans-serif;
+}
+
+/* Navigatie */
+nav {
+    display: flex;
+    align-items: center;
+    background-color: #414040;
+    justify-content: space-between;
+    margin: auto;
+}
+
+nav li.hier a {
+    color: #4df827;
+    text-decoration-line: underline;
+}
+
+.logo {
+    width: 120px;
+    cursor: pointer;
+    font-size: 3.5rem;
+    padding-left: 1rem;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #4df827;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 2rem 1.5rem;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #4df827;
+    text-transform: uppercase;
+}
+
+/* Algemeen */
+header {
+    border: solid #4df827;
+}
+
+.solid {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent, #4df827, transparent);
+    margin-bottom: 2rem;
+}
+
+body {
+    max-width: 70em;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #595858;
+}
+
+main {
+    background-color: #414040;
+    height: 85vh;
+}
+
+main p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    -webkit-text-stroke-color: #4df827;
+    -webkit-text-stroke-width: 1px;
+    padding-top: 2rem;
+    margin: 0;
+}
+
+/* Home Pagina */
+.intro {
+    text-align: center;
+    color: #000000;
+    -webkit-text-stroke-color: #4df827;
+    -webkit-text-stroke-width: 0.031rem;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+}
+
+.info {
+    text-align: center;
+    color: #000000;
+    -webkit-text-stroke-color: #4df827;
+    -webkit-text-stroke-width: 0.031rem;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+}
+
+.klik {
+    text-align: center;
+    color: #000000;
+    -webkit-text-stroke-color: #4df827;
+    -webkit-text-stroke-width: 0.031rem;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+}
+
+.main1 h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    -webkit-text-stroke-color: #4df827;
+    -webkit-text-stroke-width: 0.019rem;
+}
+
+.voegToe {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+.voegToe a {
+    text-decoration: none;
+    color: #000000;
+    padding: 1.5rem 1rem;
+    border: dotted #4df827;
+    -webkit-text-stroke-color: #4df827;
+    -webkit-text-stroke-width: 0.031rem;
+}
+
+/* Voeg Toe Pagina */
+.main2 h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    -webkit-text-stroke-color: #4df827;
+    -webkit-text-stroke-width: 0.019rem;
+}
+
+.invulFormulier {
+    width: 40%;
+    border: dotted #4df827;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 2rem;
+}
+
+.invulVeld {
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.invulVeld input, .invulVeld textarea{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1.25rem;
+    margin: 15px 0;
+    border: none;
+    border-bottom: 3px solid #262f31;
+    outline: none;
+    resize: none;
+}
+
+.invulVeld span {
+    position: absolute;
+    left: 0;
+    padding: 10px 0;
+    font-size: 1.25rem;
+    margin: 15px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #323232;
+}
+
+.invulVeld input:focus ~ span, input:valid ~ span, .invulVeld textarea:focus ~ span, .invulVeld textarea:valid ~ span {
+    color: #4df827;
+    font-size: 0.7rem;
+    transform: translateY(-25px);
+}
+
+.invulVeld input[type="submit"] {
+    width: 110px;
+    background: #4df827;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 1.375rem;
+}
+
+/* Overzicht Pagina */
+.wijzig img {
+    width: 1rem;
+    height: 1rem;
+}
+
+.verwijder img {
+    width: 1rem;
+    height: 1.5rem;
+}
+
+table {
+    margin-right: auto;
+    margin-left: auto;
+    border: double #4df827;
+}
+
+th {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.5rem;
+    -webkit-text-stroke-color: #4df827;
+    -webkit-text-stroke-width: 0.031rem;
+}
+
+.woorden {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #4df827;
+    color: #000000;
+    text-align: center;
+    font-size: 1rem;
+    bottom: 0;
+    height: 4rem;
+    width: 100%;
+}
+
+footer p {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Media */
+@media screen and (max-width: 950px) {
+    th {
+        font-size: 1rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .invulFormulier {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    nav ul li {
+        display: block;
+        padding: 0;
+        margin-right: 1rem;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 600px){
+    h1{
+        font-size: 1.875rem;
+    }
+    h2, .voegToe{
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    nav ul li a{
+        font-size: 0.75rem;
+    }
+    th {
+        font-size: 0.5rem;
+        padding-left: 0.2rem;
+        padding-right: 0.2rem;
+    }
+}
