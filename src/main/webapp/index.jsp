@@ -32,7 +32,7 @@
         activiteit (Bv. MacDonalds) het gaat zodat je weet voor wat er exact is betaalt. Hierna vul je het bedrag in
         dat betaalt is. Als laatste vul je de datum van de activiteit in.</p>
     <p class="klik">Wil je beginnen met bij te houden wie wat betaalt?<br>Klik dan op de knop hieronder!</p>
-    <p class="voegToe"><a href="tweede.jsp">Voeg Een Geldsom Toe</a></p>
+    <p class="voegToe"><a href="voegToe.jsp">Voeg Een Geldsom Toe</a></p>
 </main>
 <footer>
     <p>Created by Lauwers Ernest. © 2022</p>
