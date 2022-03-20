@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="lauwers-ernest:war3">
+    <output-path>$PROJECT_DIR$/out/artifacts/lauwers_ernest_war3</output-path>
+    <root id="archive" name="lauwers-ernest_war.war">
+      <element id="artifact" artifact-name="lauwers-ernest:war exploded" />
+    </root>
+  </artifact>
+</component>
