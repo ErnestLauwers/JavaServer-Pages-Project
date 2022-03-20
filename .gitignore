@@ -1,5 +1,9 @@
- /out
+ .idea/
+
+ out/
+
+ target/
+
+ web/.DS_Store
 
  *.iml
-
- .idea

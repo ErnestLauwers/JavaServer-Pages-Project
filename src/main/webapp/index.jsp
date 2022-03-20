@@ -1,3 +1,4 @@
+<%@ page import="domain.model.Bedrag" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -14,9 +15,10 @@
     <nav>
         <p class="logo"><a href="index.jsp">M/S</a></p>
         <ul>
-            <li class="hier"><a href="index.jsp">Home</a></li>
+            <li class="hier"><a href="Controller?command=home">Home</a></li>
+            <li><a href="Controller?command=overzicht">Overzicht</a></li>
             <li><a href="voegToe.jsp">Voeg Toe</a></li>
-            <li><a href="overzicht.jsp">Overzicht</a></li>
+            <li><a href="Controller?command=zoek">Zoek</a></li>
         </ul>
     </nav>
 </header>

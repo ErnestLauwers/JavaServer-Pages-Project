@@ -15,7 +15,7 @@ nav {
 }
 
 nav li.hier a {
-    color: #4df827;
+    color: #27e0f8;
     text-decoration-line: underline;
 }
 
@@ -28,7 +28,7 @@ nav li.hier a {
 
 .logo a {
     text-decoration: none;
-    color: #4df827;
+    color: #27e0f8;
 }
 
 nav ul li {
@@ -38,19 +38,19 @@ nav ul li {
 
 nav ul li a{
     text-decoration: none;
-    color: #4df827;
+    color: #27e0f8;
     text-transform: uppercase;
 }
 
 /* Algemeen */
 header {
-    border: solid #4df827;
+    border: solid #27e0f8;
 }
 
 .solid {
     border: 0;
     height: 2px;
-    background-image: linear-gradient(to right, transparent, #4df827, transparent);
+    background-image: linear-gradient(to right, transparent, #27e0f8, transparent);
     margin-bottom: 2rem;
 }
 
@@ -74,7 +74,7 @@ main p {
 h1 {
     text-align: center;
     font-size: 3rem;
-    -webkit-text-stroke-color: #4df827;
+    -webkit-text-stroke-color: #27e0f8;
     -webkit-text-stroke-width: 1px;
     padding-top: 2rem;
     margin: 0;
@@ -83,27 +83,21 @@ h1 {
 /* Home Pagina */
 .intro {
     text-align: center;
-    color: #000000;
-    -webkit-text-stroke-color: #4df827;
-    -webkit-text-stroke-width: 0.031rem;
+    color: #27e0f8;
     font-size: 1rem;
     margin-bottom: 3rem;
 }
 
 .info {
     text-align: center;
-    color: #000000;
-    -webkit-text-stroke-color: #4df827;
-    -webkit-text-stroke-width: 0.031rem;
+    color: #27e0f8;
     font-size: 1rem;
     margin-bottom: 3rem;
 }
 
 .klik {
     text-align: center;
-    color: #000000;
-    -webkit-text-stroke-color: #4df827;
-    -webkit-text-stroke-width: 0.031rem;
+    color: #27e0f8;
     font-size: 1rem;
     margin-bottom: 3rem;
 }
@@ -113,8 +107,7 @@ h1 {
     font-size: 1.5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    -webkit-text-stroke-color: #4df827;
-    -webkit-text-stroke-width: 0.019rem;
+    color: #27e0f8;
 }
 
 .voegToe {
@@ -128,11 +121,9 @@ h1 {
 
 .voegToe a {
     text-decoration: none;
-    color: #000000;
     padding: 1.5rem 1rem;
-    border: dotted #4df827;
-    -webkit-text-stroke-color: #4df827;
-    -webkit-text-stroke-width: 0.031rem;
+    border: dotted #de1b1b;
+    color: #27e0f8;
 }
 
 /* Voeg Toe Pagina */
@@ -140,13 +131,26 @@ h1 {
     text-align: center;
     font-size: 1.5rem;
     padding-bottom: 1rem;
-    -webkit-text-stroke-color: #4df827;
-    -webkit-text-stroke-width: 0.019rem;
+    color: #27e0f8;
+}
+
+.fout {
+    width: 33%;
+    background-color: rgb(227, 0, 0);
+    margin-bottom: 1rem;
+    border:  #050505;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 1.5rem;
+}
+
+.fout li {
+    font-size: 1.2rem;
 }
 
 .invulFormulier {
     width: 40%;
-    border: dotted #4df827;
+    border: dotted #de1b1b;
     margin-left: auto;
     margin-right: auto;
     padding: 1rem 2rem;
@@ -181,14 +185,14 @@ h1 {
 }
 
 .invulVeld input:focus ~ span, input:valid ~ span, .invulVeld textarea:focus ~ span, .invulVeld textarea:valid ~ span {
-    color: #4df827;
+    color: #27e0f8;
     font-size: 0.7rem;
     transform: translateY(-25px);
 }
 
 .invulVeld input[type="submit"] {
     width: 110px;
-    background: #4df827;
+    color: #27e0f8;
     border: none;
     cursor: pointer;
     padding: 15px;
@@ -209,26 +213,38 @@ h1 {
 table {
     margin-right: auto;
     margin-left: auto;
-    border: double #4df827;
+    border: double #27e0f8;
 }
 
-th {
+th, td {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     text-decoration: none;
-    color: #000000;
     font-size: 1.5rem;
-    -webkit-text-stroke-color: #4df827;
-    -webkit-text-stroke-width: 0.031rem;
+    color: #27e0f8;
 }
 
 .woorden {
     text-decoration: underline;
 }
 
+.meestBetalende {
+    margin-top: 2rem;
+    color: #27e0f8;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.meestBetalendeNaam {
+    font-size: 1.5rem;
+    color: #de1b1b;
+    text-align: center;
+    margin-top: 1rem;
+}
+
 /* Footer */
 footer {
-    background-color: #4df827;
+    background-color: #27e0f8;
     color: #000000;
     text-align: center;
     font-size: 1rem;

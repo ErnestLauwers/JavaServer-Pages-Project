@@ -1,3 +1,6 @@
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="domain.model.Bedrag" %>
+<%@ page import="domain.db.BedragenDB" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -14,9 +17,10 @@
     <nav>
         <p class="logo"><a href="index.jsp">M/S</a></p>
         <ul>
-            <li><a href="index.jsp">Home</a></li>
+            <li><a href="Controller?command=home">Home</a></li>
+            <li class="hier"><a href="Controller?command=overzicht">Overzicht</a></li>
             <li><a href="voegToe.jsp">Voeg Toe</a></li>
-            <li class="hier"><a href="overzicht.jsp">Overzicht</a></li>
+            <li><a href="Controller?command=zoek">Zoek</a></li>
         </ul>
     </nav>
 </header>
@@ -32,44 +36,28 @@
             <th>#Geld</th>
             <th>Datum</th>
         </tr>
-        <tr>
-            <th>1</th>
-            <th>Ernest</th>
-            <th>Supermarkt</th>
-            <th>81.67</th>
-            <th>21/04/2021</th>
-            <th class="wijzig"><img src="img/wijzig.png" alt="Wijzigen"> </th>
-            <th class="verwijder"><img src="img/verwijder.png" alt="Delete"> </th>
-        </tr>
-        <tr>
-            <th>2</th>
-            <th>Oscar</th>
-            <th>MacDonalds</th>
-            <th>32.89</th>
-            <th>22/04/2021</th>
-            <th class="wijzig"><img src="img/wijzig.png" alt="Wijzigen"> </th>
-            <th class="verwijder"><img src="img/verwijder.png" alt="Delete"> </th>
-        </tr>
-        <tr>
-            <th>3</th>
-            <th>Jasper</th>
-            <th>Café</th>
-            <th>23.99</th>
-            <th>22/04/2021</th>
-            <th class="wijzig"><img src="img/wijzig.png" alt="Wijzigen"> </th>
-            <th class="verwijder"><img src="img/verwijder.png" alt="Delete"> </th>
-        </tr>
-        <tr>
-            <th>4</th>
-            <th>Lies</th>
-            <th>Restaurant</th>
-            <th>45.50</th>
-            <th>23/04/2021</th>
-            <th class="wijzig"><img src="img/wijzig.png" alt="Wijzigen"> </th>
-            <th class="verwijder"><img src="img/verwijder.png" alt="Verwijderen"> </th>
-        </tr>
         </thead>
+        <tbody>
+        <% ArrayList<Bedrag> bedragen = (ArrayList<Bedrag>) request.getAttribute("bedragen"); %>
+        <%
+            int id = 0;
+            for (Bedrag bedrag : bedragen) {
+                id++;
+        %>
+        <tr>
+            <td><%= id %></td>
+            <td><%= bedrag.getNaam() %></td>
+            <td><%= bedrag.getActiviteit() %></td>
+            <td><%= bedrag.getAantal() %></td>
+            <td><%= bedrag.getDatum() %></td>
+        </tr>
+        <%
+            }
+        %>
+        </tbody>
     </table>
+    <p class="meestBetalende">De persoon die het hoogste bedrag in één keer heeft betaald is:</p>
+    <p class="meestBetalendeNaam"><%= request.getAttribute("meestBetalende")%></p>
 </main>
 <footer>
     <p>Created by Lauwers Ernest. © 2022</p>

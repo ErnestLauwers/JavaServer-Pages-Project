@@ -1,3 +1,4 @@
+<%@ page import="domain.model.Bedrag" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -14,9 +15,10 @@
     <nav>
         <p class="logo"><a href="index.jsp">M/S</a></p>
         <ul>
-            <li class="hier"><a href="index.jsp">Home</a></li>
+            <li class="hier"><a href="Controller?command=home">Home</a></li>
+            <li><a href="Controller?command=overzicht">Overzicht</a></li>
             <li><a href="voegToe.jsp">Voeg Toe</a></li>
-            <li><a href="overzicht.jsp">Overzicht</a></li>
+            <li><a href="Controller?command=zoek">Zoek</a></li>
         </ul>
     </nav>
 </header>
@@ -32,7 +34,7 @@
         activiteit (Bv. MacDonalds) het gaat zodat je weet voor wat er exact is betaalt. Hierna vul je het bedrag in
         dat betaalt is. Als laatste vul je de datum van de activiteit in.</p>
     <p class="klik">Wil je beginnen met bij te houden wie wat betaalt?<br>Klik dan op de knop hieronder!</p>
-    <p class="voegToe"><a href="tweede.jsp">Voeg Een Geldsom Toe</a></p>
+    <p class="voegToe"><a href="voegToe.jsp">Voeg Een Geldsom Toe</a></p>
 </main>
 <footer>
     <p>Created by Lauwers Ernest. © 2022</p>

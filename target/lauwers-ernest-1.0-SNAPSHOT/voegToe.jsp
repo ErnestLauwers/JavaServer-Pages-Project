@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,36 +15,46 @@
     <nav>
         <p class="logo"><a href="index.jsp">M/S</a></p>
         <ul>
-            <li><a href="index.jsp">Home</a></li>
+            <li><a href="Controller?command=home">Home</a></li>
+            <li><a href="Controller?command=overzicht">Overzicht</a></li>
             <li class="hier"><a href="voegToe.jsp">Voeg Toe</a></li>
-            <li><a href="overzicht.jsp">Overzicht</a></li>
+            <li><a href="Controller?command=zoek">Zoek</a></li>
         </ul>
     </nav>
 </header>
 <main class="main2">
     <h1>MoneySplit</h1>
     <hr class="solid">
+    <c:if test="${not empty errors}">
+        <div class="fout">
+            <ul>
+                <c:forEach items ="${errors}" var="error">
+                    <li>${error}</li>
+                </c:forEach>
+            </ul>
+        </div>
+    </c:if>
     <section class="invulFormulier">
-        <form>
+        <form action="Controller?command=voegToe" method="post" novalidate>
             <h2>Voeg Toe</h2>
             <div class="invulVeld">
                 <label for="naam"></label>
-                <input type="text" name="naam" required="required" id="naam">
+                <input type="text" name="naam" id="naam" value="${naamFout}">
                 <span>Naam</span>
             </div>
             <div class="invulVeld">
                 <label for="activiteit"></label>
-                <input type="text" name="activiteit" required="required" id="activiteit">
+                <input type="text" name="activiteit" id="activiteit" value="${activiteitFout}">
                 <span>Activiteit</span>
             </div>
             <div class="invulVeld">
-                <label for="geld"></label>
-                <input type="text" name="geld" required="required" id="geld">
+                <label for="aantal"></label>
+                <input type="number" name="aantal" id="aantal" value="${aantalFout}">
                 <span>#Geld</span>
             </div>
             <div class="invulVeld">
                 <label for="datum"></label>
-                <input type="text" name="datum" required="required" id="datum">
+                <input type="text" name="datum" id="datum" value="${datumFout}">
                 <span>Datum</span>
             </div>
             <div class="invulVeld">
