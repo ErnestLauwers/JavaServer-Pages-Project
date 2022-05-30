@@ -1,7 +1,8 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="domain.model.Bedrag" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,17 +12,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header>
-    <nav>
-        <p class="logo"><a href="index.jsp">M/S</a></p>
-        <ul>
-            <li class="hier"><a href="Controller?command=home">Home</a></li>
-            <li><a href="Controller?command=overzicht">Overzicht</a></li>
-            <li><a href="voegToe.jsp">Voeg Toe</a></li>
-            <li><a href="Controller?command=zoek">Zoek</a></li>
-        </ul>
-    </nav>
-</header>
+<jsp:include page="header.jsp">
+    <jsp:param name="hier" value="Home"/>
+</jsp:include>
 <main class="main1">
     <h1>MoneySplit</h1>
     <hr class="solid">
@@ -33,8 +26,52 @@
     <p class="info">Geef om te beginnen de naam in van de persoon die heeft betaalt. Als tweede vul je in om welke
         activiteit (Bv. MacDonalds) het gaat zodat je weet voor wat er exact is betaalt. Hierna vul je het bedrag in
         dat betaalt is. Als laatste vul je de datum van de activiteit in.</p>
+    <p class="meestBetalende">De persoon die het hoogste bedrag in één keer heeft betaald is:</p>
+    <p class="meestBetalendeNaam">${requestScope.meestBetalende}</p>
     <p class="klik">Wil je beginnen met bij te houden wie wat betaalt?<br>Klik dan op de knop hieronder!</p>
-    <p class="voegToe"><a href="voegToe.jsp">Voeg Een Geldsom Toe</a></p>
+    <div class="voegToe">
+        <a class="voegGeldToe" href="Controller?command=voegToeMain">Voeg Een Geldsom Toe</a>
+    </div>
+    <section>
+        <h3 class="laatsGewijzigdText">Het laatst gewijzigde bedrag is:</h3>
+        <c:choose>
+            <c:when test="${not empty oudBedrag}">
+                <table>
+                    <thead>
+                    <tr class="thIndex">
+                        <th>Naam</th>
+                        <th>Activiteit</th>
+                        <th>#Geld</th>
+                        <th>Datum</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="tdIndex">
+                            <td>${oudBedrag.naam}</td>
+                            <td>${oudBedrag.activiteit}</td>
+                            <td>${oudBedrag.aantal}</td>
+                            <td>${oudBedrag.datum}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </c:when>
+            <c:when test="${not empty verwijderd}">
+                <p class="idVerwijderd">${verwijderd}</p>
+            </c:when>
+            <c:otherwise>
+                <p class="geenWijzig">Er is nog geen bedrag gewijzigd.</p>
+            </c:otherwise>
+        </c:choose>
+        <c:choose>
+            <c:when test="${not empty gewijzigdeBedrag}">
+                <div class="button">
+                    <button class="buttonTwee"><a href="Controller?command=wijzigOpnieuw">Laatste wijziging<br>ongedaan maken</a></button>
+                </div>
+            </c:when>
+            <c:otherwise>
+            </c:otherwise>
+        </c:choose>
+    </section>
 </main>
 <footer>
     <p>Created by Lauwers Ernest. © 2022</p>

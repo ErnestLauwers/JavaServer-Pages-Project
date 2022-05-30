@@ -12,9 +12,10 @@ nav {
     background-color: #414040;
     justify-content: space-between;
     margin: auto;
+    border: solid #27e0f8;
 }
 
-nav li.hier a {
+nav li.hier a{
     color: #27e0f8;
     text-decoration-line: underline;
 }
@@ -43,10 +44,6 @@ nav ul li a{
 }
 
 /* Algemeen */
-header {
-    border: solid #27e0f8;
-}
-
 .solid {
     border: 0;
     height: 2px;
@@ -64,6 +61,22 @@ body {
 main {
     background-color: #414040;
     height: 85vh;
+}
+
+main h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    color: #27e0f8;
+}
+
+.main2, .main1 {
+    background-color: #414040;
+    height: auto;
+}
+
+.hoogte {
+    padding-bottom: 14rem;
 }
 
 main p {
@@ -99,7 +112,7 @@ h1 {
     text-align: center;
     color: #27e0f8;
     font-size: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .main1 h2 {
@@ -110,20 +123,82 @@ h1 {
     color: #27e0f8;
 }
 
+.main1 {
+    padding-bottom: 9rem;
+}
+
 .voegToe {
-    text-align: center;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
+    width: 27%;
     font-size: 1.5rem;
     padding-bottom: 2rem;
     padding-top: 2rem;
+    background-color: #3a3636;
+    border: 2px dotted #de1b1b;
 }
 
 .voegToe a {
     text-decoration: none;
     padding: 1.5rem 1rem;
-    border: dotted #de1b1b;
     color: #27e0f8;
+}
+
+.voegToe:hover {
+    background-color: #de1b1b;
+}
+
+.button {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.buttonTwee {
+    background-color: #3a3636;
+    padding: 0.5rem 1rem;
+    border: 2px solid #de1b1b;
+}
+
+.buttonTwee:hover {
+    background-color: #de1b1b;
+}
+
+.buttonTwee a {
+    text-decoration: none;
+    color: #27e0f8;
+}
+
+.laatsGewijzigdText {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #27e0f8;
+    margin-bottom: 0.5rem;
+    margin-top: 0.9rem;
+}
+
+.thIndex th, .tdIndex td {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #27e0f8;
+}
+
+.thIndex {
+    text-decoration: underline;
+}
+
+.idVerwijderd {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #de1b1b;
+    margin-top: 1rem;
+}
+
+.geenWijzig {
+    text-align: center;
+    color: #de1b1b;
+    font-size: 0.8rem;
 }
 
 /* Voeg Toe Pagina */
@@ -148,12 +223,17 @@ h1 {
     font-size: 1.2rem;
 }
 
+.fout p {
+    font-size: 1.2rem;
+}
+
 .invulFormulier {
     width: 40%;
     border: dotted #de1b1b;
     margin-left: auto;
     margin-right: auto;
     padding: 1rem 2rem;
+    background-color: #262f31;
 }
 
 .invulVeld {
@@ -200,14 +280,31 @@ h1 {
 }
 
 /* Overzicht Pagina */
-.wijzig img {
-    width: 1rem;
-    height: 1rem;
+.wijzig img, .verwijder img {
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
-.verwijder img {
-    width: 1rem;
-    height: 1.5rem;
+.wijzig {
+    padding-left: 0.5rem;
+    padding-right: 0.1rem;
+}
+
+.knopWijzig, .knopVerwijder {
+    background-color: #414040;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    border: none;
+}
+
+.knopWijzig:hover, .knopVerwijder:hover {
+    background-color: #de1b1b;
+    border-radius: 50px;
+}
+
+.verwijder {
+    padding-left: 0.4rem;
+    padding-right: 0.5rem;
 }
 
 table {
@@ -239,7 +336,69 @@ th, td {
     font-size: 1.5rem;
     color: #de1b1b;
     text-align: center;
+    margin: 1rem 0;
+}
+
+/* Verwijder Pagina*/
+.invulFormulierVerwijder {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.invulVeldGroen input[type="submit"], .invulVeldRood input[type="submit"] {
+    width: 110px;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 1.375rem;
+}
+
+.invulVeldGroen input{
+    color: #2fec2f;
+}
+
+.invulVeldRood input{
+    color: #e0062d;
     margin-top: 1rem;
+}
+
+.inhoudVerwijder {
+    text-align: center;
+}
+
+.inhoudVerwijder p {
+    font-size: 1rem;
+    color: #27e0f8;
+    padding-top: 0.5rem;
+}
+
+/* zoekResultaten Pagina */
+.resultaatNiet {
+    padding: 1.5rem 0;
+    background-color: #de1b1b;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.zoekOpnieuw a {
+    text-decoration: none;
+    color: #27e0f8;
+}
+.zoekOpnieuw {
+    margin-top: 4rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    background-color: #3a3636;
+    border: 2px dotted #de1b1b;
+    width: 30%;
+}
+
+.zoekOpnieuw:hover {
+    background-color: #de1b1b;
 }
 
 /* Footer */
@@ -260,10 +419,13 @@ footer p {
 
 /* Media */
 @media screen and (max-width: 950px) {
-    th {
+    th, td, .fout li, .fout p, .resultaatNiet, .thIndex th, .tdIndex td {
         font-size: 1rem;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
+    }
+    .intro, .info, .meestBetalendeNaam, .meestBetalende, .klik, .zoekOpnieuw a {
+        font-size: 1rem;
     }
 }
 
@@ -287,8 +449,16 @@ footer p {
     h1{
         font-size: 1.875rem;
     }
-    h2, .voegToe{
+    h2, h3, .voegToe{
         font-size: 1.25rem;
+    }
+    .voegGeldToe {
+        font-size: 0.8rem;
+    }
+    .voegToe, .zoekOpnieuw {
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        padding-left: 0.5rem;
     }
 }
 
@@ -296,9 +466,12 @@ footer p {
     nav ul li a{
         font-size: 0.75rem;
     }
-    th {
-        font-size: 0.5rem;
+    th, td, .fout li, .fout p, .resultaatNiet, .thIndex th, .tdIndex td {
+        font-size: 0.6rem;
         padding-left: 0.2rem;
         padding-right: 0.2rem;
+    }
+    .intro, .info, .meestBetalendeNaam, .meestBetalende, .klik, .zoekOpnieuw a {
+        font-size: 0.6rem;
     }
 }

@@ -1,9 +1,10 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="domain.model.Bedrag" %>
 <%@ page import="domain.db.BedragenDB" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,51 +14,36 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header>
-    <nav>
-        <p class="logo"><a href="index.jsp">M/S</a></p>
-        <ul>
-            <li><a href="Controller?command=home">Home</a></li>
-            <li class="hier"><a href="Controller?command=overzicht">Overzicht</a></li>
-            <li><a href="voegToe.jsp">Voeg Toe</a></li>
-            <li><a href="Controller?command=zoek">Zoek</a></li>
-        </ul>
-    </nav>
-</header>
+<jsp:include page="header.jsp">
+    <jsp:param name="hier" value="Overzicht"/>
+</jsp:include>
 <main>
     <h1>MoneySplit</h1>
     <hr class="solid">
     <table>
         <thead>
         <tr class="woorden">
-            <th>ID</th>
             <th>Naam</th>
             <th>Activiteit</th>
             <th>#Geld</th>
             <th>Datum</th>
+            <th></th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
-        <% ArrayList<Bedrag> bedragen = (ArrayList<Bedrag>) request.getAttribute("bedragen"); %>
-        <%
-            int id = 0;
-            for (Bedrag bedrag : bedragen) {
-                id++;
-        %>
+        <c:forEach var="bedrag" items="${requestScope.bedragen}">
         <tr>
-            <td><%= id %></td>
-            <td><%= bedrag.getNaam() %></td>
-            <td><%= bedrag.getActiviteit() %></td>
-            <td><%= bedrag.getAantal() %></td>
-            <td><%= bedrag.getDatum() %></td>
+            <td>${bedrag.naam}</td>
+            <td>${bedrag.activiteit}</td>
+            <td>${bedrag.aantal}</td>
+            <td>${bedrag.datum}</td>
+            <td class="wijzig"><div class="knopWijzig"><a href="Controller?command=wijzigMain&bedrag=${bedrag.id}"><img src="img/wijzig.png" alt="wijzig"></a></div></td>
+            <td class="verwijder"><div class="knopVerwijder"><a href="Controller?command=verwijderBedrag&bedrag=${bedrag.id}"><img src="img/verwijder.png" alt="verwijder"></a></div></td>
         </tr>
-        <%
-            }
-        %>
+        </c:forEach>
         </tbody>
     </table>
-    <p class="meestBetalende">De persoon die het hoogste bedrag in één keer heeft betaald is:</p>
-    <p class="meestBetalendeNaam"><%= request.getAttribute("meestBetalende")%></p>
 </main>
 <footer>
     <p>Created by Lauwers Ernest. © 2022</p>

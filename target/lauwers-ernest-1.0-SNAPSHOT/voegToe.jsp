@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,17 +11,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header>
-    <nav>
-        <p class="logo"><a href="index.jsp">M/S</a></p>
-        <ul>
-            <li><a href="Controller?command=home">Home</a></li>
-            <li><a href="Controller?command=overzicht">Overzicht</a></li>
-            <li class="hier"><a href="voegToe.jsp">Voeg Toe</a></li>
-            <li><a href="Controller?command=zoek">Zoek</a></li>
-        </ul>
-    </nav>
-</header>
+<jsp:include page="header.jsp">
+    <jsp:param name="hier" value="Voeg Toe"/>
+</jsp:include>
 <main class="main2">
     <h1>MoneySplit</h1>
     <hr class="solid">
@@ -34,6 +26,7 @@
             </ul>
         </div>
     </c:if>
+    <div class="hoogte">
     <section class="invulFormulier">
         <form action="Controller?command=voegToe" method="post" novalidate>
             <h2>Voeg Toe</h2>
@@ -49,7 +42,7 @@
             </div>
             <div class="invulVeld">
                 <label for="aantal"></label>
-                <input type="number" name="aantal" id="aantal" value="${aantalFout}">
+                <input type="number" name="aantal" max="10000" id="aantal" value="${aantalFout}">
                 <span>#Geld</span>
             </div>
             <div class="invulVeld">
@@ -58,10 +51,11 @@
                 <span>Datum</span>
             </div>
             <div class="invulVeld">
-                <input type="submit" name="verstuur" value="Verstuur">
+                <input type="submit" name="voegToe" id="submit" value="Voeg Toe">
             </div>
         </form>
     </section>
+    </div>
 </main>
 <footer>
     <p>Created by Lauwers Ernest. © 2022</p>

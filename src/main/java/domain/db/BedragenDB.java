@@ -7,6 +7,7 @@ import java.util.List;
 
 public class BedragenDB {
     private final ArrayList<Bedrag> bedragen = new ArrayList<Bedrag>();
+    private int nieuwId = 0;
     private Bedrag bedrag;
 
     public BedragenDB () {
@@ -27,6 +28,11 @@ public class BedragenDB {
     }
 
     public void add (Bedrag bedrag) {
+        if (bedrag == null) {
+            throw new IllegalArgumentException("Bedrag mag niet leeg zijn.");
+        }
+        this.nieuwId++;
+        bedrag.SetId(nieuwId);
         bedragen.add(bedrag);
     }
 
@@ -34,10 +40,37 @@ public class BedragenDB {
         return bedragen;
     }
 
-    public void veranderBedrag (String naam, String activiteit, int aantal, String datum, Bedrag bedrag) {
-        this.bedrag.SetNaam(naam);
-        this.bedrag.SetActiviteit(activiteit);
-        this.bedrag.SetAantal(aantal);
-        this.bedrag.SetDatum(datum);
+    public void veranderBedrag (int id, Bedrag bedragW) {
+        bedragen.removeIf(i -> i.getId() == id);
+        add(bedragW);
+        bedragW.SetId(id);
+        nieuwId--;
+    }
+
+    public void verwijderBedrag (int id) {
+        Bedrag bedragVerwijder = bedragId(id);
+        if (bedragVerwijder == null) {
+            throw new IllegalArgumentException("Dit bedrag kan niet null zijn.");
+        }
+        bedragen.remove(bedragVerwijder);
+    }
+
+    public Bedrag bedragId (int id) {
+        for (int i = 0; i < bedragen.size(); i++) {
+            if (bedragen.get(i).getId() == id) {
+                return bedragen.get(i);
+            }
+        }
+        return null;
+    }
+
+    public List<Bedrag> zoekNaamBedrag (String naamB) {
+        List<Bedrag> lijst = new ArrayList<>();
+        for (Bedrag i : bedragen) {
+            if (i.getNaam().equals(naamB)) {
+                lijst.add(i);
+            }
+        }
+        return lijst;
     }
 }

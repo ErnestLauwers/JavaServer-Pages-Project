@@ -7,6 +7,7 @@ public class Bedrag {
     private String activiteit;
     private int aantal;
     private String datum;
+    public int id = 0;
 
     public Bedrag () {}
 
@@ -15,11 +16,16 @@ public class Bedrag {
         this.SetActiviteit(activiteitB);
         this.SetAantal(aantalB);
         this.SetDatum(datumB);
+        this.SetId(id++);
+    }
+
+    public void SetId (int idB) {
+        this.id = idB;
     }
 
     public void SetNaam (String naamB) {
         if (naamB == null || naamB.isEmpty()) {
-            throw new IllegalArgumentException("Naam mag niet leeg zijn.");
+            throw new IllegalArgumentException("De naam mag niet leeg zijn.");
         }
         this.naam = naamB;
     }
@@ -73,5 +79,9 @@ public class Bedrag {
 
     public String getDatum() {
         return this.datum;
+    }
+
+    public int getId() {
+        return this.id;
     }
 }
